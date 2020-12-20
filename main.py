@@ -1,8 +1,7 @@
 import pyautogui as pt
 from time import sleep
 import pyperclip
-import random
-wait_dur=0
+wait_dur=0.5
 
 #position1 = pt.locateOnScreen("C:\pemp_stuff\smile_paperclip.png" , confidence =.6)
 #x = position1[0]
@@ -63,7 +62,7 @@ def proces_response(imessage,safe=0):
         else:
             return " "
 
-def Check_new_chat(safe=0):
+def Check_new_chat():
     #print(type(pt.locateOnScreen("C:\pemp_stuff\\big_green_circle.png", confidence= 0.8)))
    # print(None==(pt.locateOnScreen("C:\pemp_stuff\\big_green_circle.png", confidence= 0.8)))
     # return False
@@ -76,16 +75,7 @@ def Check_new_chat(safe=0):
         pt.moveTo(x, y, wait_dur)
         pt.click()
         return 1
-"""
-    elif safe==1:
-        if None == pt.locateOnScreen("C:\pemp_stuff\mummy.png", confidence=0.8):
-            return False
-        NCPosn = pt.locateOnScreen("C:\pemp_stuff\mummy.png", confidence=0.8)
-        x = NCPosn[0]
-        y = NCPosn[1]
-        pt.moveTo(x+20, y+10, wait_dur)
-        pt.click()
-        return 1
+
 #"""
 
 #this function is under construction, so i have'nt included it in the main program.
@@ -119,7 +109,7 @@ def spam(text,n):
 #"""
 
 while True:
-    sleep(0)
+    sleep(2)
     x=Check_new_chat()
     if not x:
         print("skipped")
